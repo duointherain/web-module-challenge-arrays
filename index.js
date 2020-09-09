@@ -130,7 +130,7 @@ Hint: You can use .splice() for this
 function removeFlavorByName(param1, param2){
     let sliceDice = param1.indexOf('param2');
     let update = (param1.slice(sliceDice));
-    console.log(update);
+    return (update);
 
     /*code here*/
 
@@ -146,12 +146,14 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
+let drinks = 0
+
 function copy(param1, param2){
 
     /*code here*/
     
     param2 = param1.slice();
-    
+    return param2;
 
 }
 
@@ -173,13 +175,21 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(param1, param2){
+function filterByWord(array1, flavor){
+    //console.log(originalFlavors);
+    newArray = [];
+    for (let i = 0; i < array1.length; i++){
 
-   
+        if (array1[i].includes(flavor)){
+            
+            newArray.push(array1[i]);
 
+        }
+    } 
+    return newArray;
 }
 
-
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
 
