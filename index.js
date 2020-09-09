@@ -72,7 +72,7 @@ var juice = ["apple", "strawberry", "kiwi", "cherry"]
 
 function addFlavor(param1, param2){
     juice.unshift(param2);
-    return juice;
+    return param1;
 
 }//function
 
@@ -89,12 +89,13 @@ Your function should remove a flavor from the end of the array and console.log t
 
 For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
 
-function removeLastFlavor(/*code here*/){
+function removeLastFlavor(param1){
 
     /*code here*/
-
+    param1.pop();
+    return param1;
 }
-
+console.log(removeLastFlavor(juice));
 /* Task 4: Write a function that returns a flavor at a given index in the array.
 
 Your function should accept:
@@ -104,11 +105,12 @@ Your function should accept:
 
 For example, getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully. */
 
-function getFlavorByIndex(/*code here*/){
-
+function getFlavorByIndex(param1, param2){
     /*code here*/
-
+    return param1[param2];
 }
+console.log(getFlavorByIndex(juice, 3));
+
 
 /* Task 5: As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that flavor from the array. 
 
@@ -122,12 +124,17 @@ For example, removeFlavorByName(originalFlavors, "Vanilla") would return an arra
 Hint: You can use .splice() for this
 
 */
+let update = 0
 
-function removeFlavorByName(/*code here*/){
+function removeFlavorByName(param1, param2){
+    let sliceDice = param1.indexOf('param2');
+    let update = (param1.slice(sliceDice));
+    console.log(update);
 
     /*code here*/
 
 }
+console.log(removeFlavorByName(juice, "kiwi"));
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
